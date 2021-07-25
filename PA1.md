@@ -54,7 +54,7 @@ activity$date = as.Date(activity$date)
 
 
 ```r
-step_date <- activity %>% group_by(date) %>% summarize(steps=sum(steps,na.rm=TRUE))
+step_date <- activity %>% group_by(date) %>% summarize(steps=sum(steps))
 ```
 
 ```
@@ -69,6 +69,10 @@ ggplot(step_date, aes(x=steps)) + geom_histogram()
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
+```
+## Warning: Removed 8 rows containing non-finite values (stat_bin).
+```
+
 ![](PA1_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ## What is mean total number of steps taken per day?
@@ -80,8 +84,8 @@ mean_step <- mean(step_date$steps)
 median_step <- median(step_date$steps)
 ```
 
-Mean step: 9354.2295082
-Median step: 10395
+Mean step: NA
+Median step: NA
 
 ## Time series plot of the average number of steps taken
 

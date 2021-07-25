@@ -27,7 +27,7 @@ activity$date = as.Date(activity$date)
 ## Histogram of the total number of steps taken each day
 
 ```{r, echo = TRUE }
-step_date <- activity %>% group_by(date) %>% summarize(steps=sum(steps,na.rm=TRUE))
+step_date <- activity %>% group_by(date) %>% summarize(steps=sum(steps))
 ggplot(step_date, aes(x=steps)) + geom_histogram()
 ```
 
